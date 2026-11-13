@@ -1,6 +1,6 @@
 .button {
   position: fixed;
-  right: var(--layout-page-margin);
+  right: var(--page-edge);
   bottom: var(--space-40);
   z-index: 20;
   display: inline-flex;

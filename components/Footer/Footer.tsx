@@ -12,18 +12,20 @@ export function Footer({ name, location, email, socials }: FooterProps) {
 
   return (
     <footer className={styles.footer}>
-      <p className={styles.copyright}>
-        © {new Date().getFullYear()} {name} · {location}
-      </p>
-      <ul className={styles.links}>
-        {links.map((link) => (
-          <li key={link.label}>
-            <a href={link.href} className={styles.link}>
-              {link.label}
-            </a>
-          </li>
-        ))}
-      </ul>
+      <div className={`container ${styles.inner}`}>
+        <p className={styles.copyright}>
+          © {new Date().getFullYear()} {name} · {location}
+        </p>
+        <ul className={styles.links}>
+          {links.map((link) => (
+            <li key={link.label}>
+              <a href={link.href} className={styles.link}>
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </footer>
   );
 }

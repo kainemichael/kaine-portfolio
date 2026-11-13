@@ -87,6 +87,16 @@ ol {
   }
 }
 
+/*
+ * Where the content column starts: the page margin, or further in once the
+ * 1280 container is centred on a wide screen. Fixed elements (top bar,
+ * Get in touch) use it so they line up with the content. The % resolves
+ * against the viewport for fixed elements.
+ */
+:root {
+  --page-edge: max(var(--layout-page-margin), calc((100% - var(--layout-container)) / 2));
+}
+
 /* Page-width wrapper: 1280 container with 80 margins on desktop, 20 on mobile. */
 .container {
   width: min(100% - 2 * var(--layout-page-margin), var(--layout-container));

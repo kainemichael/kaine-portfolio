@@ -1,11 +1,14 @@
 .footer {
-  display: flex;
-  justify-content: space-between;
-  gap: var(--space-6);
-  padding: var(--space-32) var(--layout-page-margin) var(--space-120);
+  padding: var(--space-32) 0 var(--space-120);
   border-top: 1px solid var(--border-default);
   background: var(--bg-page);
   font: var(--type-small);
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-6);
 }
 
 .copyright {
@@ -35,9 +38,12 @@
 
 @media (max-width: 767px) {
   .footer {
-    flex-direction: column;
     padding-top: var(--space-24);
     /* Leaves room for the floating nav. */
     padding-bottom: var(--space-120);
+  }
+
+  .inner {
+    flex-direction: column;
   }
 }

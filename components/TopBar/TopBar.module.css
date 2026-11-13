@@ -1,7 +1,7 @@
 .bar {
   position: fixed;
   top: var(--space-32);
-  left: var(--layout-page-margin);
+  left: var(--page-edge);
   z-index: 20;
   display: flex;
   align-items: center;
