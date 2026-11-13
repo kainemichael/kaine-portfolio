@@ -19,7 +19,28 @@ export function getTheme(): Theme {
   return document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
 }
 
-export function setTheme(theme: Theme) {
+/** Class on <html> while the theme wipe runs, so its animation doesn't apply to anything else. */
+const WIPE_CLASS = 'theme-wipe';
+
+/**
+ * Switches theme with a wipe from bottom to top where the browser supports
+ * view transitions. Without support, or with reduced motion, it switches instantly.
+ */
+export function switchTheme(theme: Theme) {
+  const root = document.documentElement;
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!document.startViewTransition || reduceMotion) {
+    setTheme(theme);
+    return;
+  }
+
+  root.classList.add(WIPE_CLASS);
+  const transition = document.startViewTransition(() => setTheme(theme));
+  transition.finished.finally(() => root.classList.remove(WIPE_CLASS));
+}
+
+function setTheme(theme: Theme) {
   document.documentElement.dataset.theme = theme;
   try {
     localStorage.setItem(THEME_STORAGE_KEY, theme);

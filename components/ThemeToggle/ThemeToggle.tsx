@@ -1,7 +1,7 @@
 'use client';
 
 import { useSyncExternalStore } from 'react';
-import { getTheme, setTheme, subscribeToTheme, type Theme } from '@/lib/theme';
+import { getTheme, subscribeToTheme, switchTheme, type Theme } from '@/lib/theme';
 import { Icon } from '../Icon';
 import styles from './ThemeToggle.module.css';
 
@@ -14,7 +14,7 @@ export function ThemeToggle() {
     <button
       type="button"
       className={styles.toggle}
-      onClick={() => setTheme(next)}
+      onClick={() => switchTheme(next)}
       aria-label={`Switch to ${next} theme`}
       title={`Switch to ${next} theme`}
     >
