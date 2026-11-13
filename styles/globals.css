@@ -103,6 +103,17 @@ ol {
   margin-inline: auto;
 }
 
+/* On phones the content always fills the screen minus the page margins. */
+@media (max-width: 767px) {
+  :root {
+    --page-edge: var(--layout-page-margin);
+  }
+
+  .container {
+    width: calc(100% - 2 * var(--layout-page-margin));
+  }
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -132,21 +143,108 @@ ol {
   transform: none;
 }
 
-/* Theme toggle: the new theme wipes up from the bottom over the old one. */
+/*
+ * Theme toggle: the new theme wipes up from the bottom with a torn paper
+ * edge. --tear-y moves the edge from below the screen to above it; the
+ * fixed jagged offsets on each point make the tear.
+ */
+@property --tear-y {
+  syntax: '<length-percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+
 .theme-wipe::view-transition-old(root) {
   animation: none;
 }
 
 .theme-wipe::view-transition-new(root) {
-  animation: theme-wipe 500ms cubic-bezier(0.65, 0, 0.35, 1);
+  animation: theme-wipe 650ms cubic-bezier(0.65, 0, 0.35, 1);
+  clip-path: polygon(
+    0% 100%,
+    100% 100%,
+    100% calc(var(--tear-y) + -5px),
+    98.3% calc(var(--tear-y) + 3px),
+    96.82% calc(var(--tear-y) + -5px),
+    96.03% calc(var(--tear-y) + 0px),
+    94.6% calc(var(--tear-y) + -12px),
+    93.08% calc(var(--tear-y) + 0px),
+    91.2% calc(var(--tear-y) + -9px),
+    90.3% calc(var(--tear-y) + -4px),
+    88.85% calc(var(--tear-y) + -11px),
+    87.84% calc(var(--tear-y) + -1px),
+    85.9% calc(var(--tear-y) + -10px),
+    85.07% calc(var(--tear-y) + -4px),
+    82.83% calc(var(--tear-y) + -17px),
+    82.42% calc(var(--tear-y) + -6px),
+    80.83% calc(var(--tear-y) + -13px),
+    79.63% calc(var(--tear-y) + -10px),
+    77.38% calc(var(--tear-y) + -12px),
+    76.45% calc(var(--tear-y) + -6px),
+    74.63% calc(var(--tear-y) + -14px),
+    73.32% calc(var(--tear-y) + -9px),
+    72.03% calc(var(--tear-y) + -19px),
+    71.19% calc(var(--tear-y) + -7px),
+    69.16% calc(var(--tear-y) + -10px),
+    67.85% calc(var(--tear-y) + -4px),
+    66.41% calc(var(--tear-y) + -14px),
+    65.74% calc(var(--tear-y) + -8px),
+    63.57% calc(var(--tear-y) + -16px),
+    62.25% calc(var(--tear-y) + -6px),
+    60.81% calc(var(--tear-y) + -17px),
+    59.64% calc(var(--tear-y) + -3px),
+    58.07% calc(var(--tear-y) + -13px),
+    57.04% calc(var(--tear-y) + -8px),
+    55.12% calc(var(--tear-y) + -14px),
+    54.28% calc(var(--tear-y) + -8px),
+    52.29% calc(var(--tear-y) + -19px),
+    51.07% calc(var(--tear-y) + -4px),
+    49.86% calc(var(--tear-y) + -16px),
+    48.8% calc(var(--tear-y) + -2px),
+    46.74% calc(var(--tear-y) + -13px),
+    45.35% calc(var(--tear-y) + -1px),
+    44.26% calc(var(--tear-y) + -9px),
+    43.29% calc(var(--tear-y) + 0px),
+    41.96% calc(var(--tear-y) + -4px),
+    40.68% calc(var(--tear-y) + 7px),
+    39.25% calc(var(--tear-y) + 3px),
+    37.58% calc(var(--tear-y) + 12px),
+    36.6% calc(var(--tear-y) + 7px),
+    34.96% calc(var(--tear-y) + 16px),
+    32.92% calc(var(--tear-y) + 8px),
+    31.93% calc(var(--tear-y) + 13px),
+    30.67% calc(var(--tear-y) + 5px),
+    28.97% calc(var(--tear-y) + 18px),
+    28.18% calc(var(--tear-y) + 10px),
+    26.22% calc(var(--tear-y) + 16px),
+    25.31% calc(var(--tear-y) + 10px),
+    23.69% calc(var(--tear-y) + 18px),
+    22.56% calc(var(--tear-y) + 9px),
+    20.61% calc(var(--tear-y) + 17px),
+    19.16% calc(var(--tear-y) + 6px),
+    17.87% calc(var(--tear-y) + 14px),
+    16.24% calc(var(--tear-y) + 5px),
+    15.49% calc(var(--tear-y) + 22px),
+    13.41% calc(var(--tear-y) + 6px),
+    12.83% calc(var(--tear-y) + 14px),
+    11.24% calc(var(--tear-y) + 0px),
+    10.03% calc(var(--tear-y) + 9px),
+    8.31% calc(var(--tear-y) + 2px),
+    7.16% calc(var(--tear-y) + 6px),
+    5.75% calc(var(--tear-y) + 0px),
+    4.06% calc(var(--tear-y) + 7px),
+    3.21% calc(var(--tear-y) + -9px),
+    1.51% calc(var(--tear-y) + 8px),
+    0% calc(var(--tear-y) + 6px)
+  );
 }
 
 @keyframes theme-wipe {
   from {
-    clip-path: inset(100% 0 0 0);
+    --tear-y: calc(100% + 24px);
   }
   to {
-    clip-path: inset(0 0 0 0);
+    --tear-y: -24px;
   }
 }
 
