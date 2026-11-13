@@ -1,3 +1,4 @@
+import { BrandPattern } from '../BrandPattern';
 import styles from './Footer.module.css';
 
 type FooterProps = {
@@ -25,6 +26,9 @@ export function Footer({ name, location, email, socials }: FooterProps) {
             </li>
           ))}
         </ul>
+      </div>
+      <div className={styles.band}>
+        <BrandPattern pattern="band" />
       </div>
     </footer>
   );

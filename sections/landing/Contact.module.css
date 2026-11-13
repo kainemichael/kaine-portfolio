@@ -1,51 +1,114 @@
-.contact {
-  padding-block: var(--space-120);
-  background: var(--bg-subtle);
+.section {
+  padding-bottom: var(--layout-section-gap);
 }
 
-.inner {
+/*
+ * Inverse colours: an ink panel on the light theme, a paper panel on the
+ * dark theme, so it always stands apart from the page.
+ */
+.panel {
+  --panel-text: var(--text-inverse);
+  --panel-muted: color-mix(in srgb, var(--text-inverse) 60%, var(--bg-inverse));
+  --pattern-ink: color-mix(in srgb, var(--text-inverse) 10%, var(--bg-inverse));
+
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  border-radius: var(--radius-2xl);
+  background: var(--bg-inverse);
+  color: var(--panel-text);
+}
+
+/* Pattern on the right half, fading out towards the text like the cover's gradient. */
+.field {
+  position: absolute;
+  inset: 0 0 0 50%;
+}
+
+.field::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--bg-inverse), transparent 60%);
+}
+
+.content {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: calc(var(--space-24) + var(--space-4));
+  justify-content: space-between;
+  gap: var(--space-64);
+  max-width: var(--measure-body);
+  padding: var(--space-56) var(--space-64);
+}
+
+.lockup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  font: var(--type-label);
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.label {
+  font: var(--type-mono);
+  color: var(--brand-orange);
 }
 
 .heading {
-  max-width: var(--measure-display);
   font: var(--type-display);
   letter-spacing: var(--type-display-tracking);
-  color: var(--text-primary);
 }
 
-.actions {
+.meta {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-20);
+  gap: var(--space-24) var(--space-80);
+}
+
+.meta dt {
+  font: var(--type-small);
+  color: var(--panel-muted);
+}
+
+.meta dd {
+  margin: var(--space-4) 0 0;
+  font: var(--type-label);
 }
 
 .email {
-  font: var(--type-label);
-  color: var(--text-secondary);
-  transition: color 150ms ease;
+  text-decoration: underline;
+  text-decoration-color: var(--panel-muted);
+  text-underline-offset: var(--space-4);
+  transition: text-decoration-color 150ms ease;
 }
 
 .email:hover {
-  color: var(--text-primary);
+  text-decoration-color: var(--brand-orange);
 }
 
 @media (max-width: 767px) {
-  .contact {
-    padding-block: var(--space-56);
+  .panel {
+    border-radius: var(--radius-xl);
   }
 
-  .inner {
-    gap: var(--space-20);
+  /* On phones the field sits along the bottom, fading up into the text. */
+  .field {
+    inset: auto 0 0 0;
+    height: calc(var(--space-120) + var(--space-80));
   }
 
-  .actions {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-12);
+  .field::after {
+    background: linear-gradient(to bottom, var(--bg-inverse), transparent 70%);
+  }
+
+  .content {
+    gap: var(--space-40);
+    padding: var(--space-32) var(--space-24) calc(var(--space-120) + var(--space-80));
   }
 }

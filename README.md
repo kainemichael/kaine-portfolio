@@ -46,6 +46,8 @@ components/              One folder per Figma component, same names as in Figma
   Tag/  NavItem/  FloatingNav/  TopBar/  GetInTouch/  Icon/
   WorkCard/  ProjectRow/  SideProjectCard/  SectionHeader/
   TextBlock/  ListItem/  Visual/  MetaItem/  NextProject/  Footer/  ScrollFade/
+  BrandPattern/          Pattern/Band · Paper and Pattern/Field · Ink, drawn inline so they follow the theme
+  ThemeToggle/
 sections/                Page sections built from components
   landing/               Hero, Case studies, Explorations, Side projects, About, Contact
   work/                  Work header with tabs, exploration card

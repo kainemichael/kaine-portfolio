@@ -1,5 +1,8 @@
 .footer {
-  padding: var(--space-32) 0 var(--space-120);
+  /* Above the scroll fades (z-index 10), below the floating nav and buttons (20). */
+  position: relative;
+  z-index: 11;
+  padding-top: var(--space-32);
   border-top: 1px solid var(--border-default);
   background: var(--bg-page);
   font: var(--type-small);
@@ -9,6 +12,12 @@
   display: flex;
   justify-content: space-between;
   gap: var(--space-6);
+  padding-bottom: var(--space-48);
+}
+
+/* "Pattern/Band · Paper": full width at its 8:1 Figma ratio, never shorter than 96 px (crops from the centre). */
+.band {
+  height: max(var(--space-96), calc(100vw / 8));
 }
 
 .copyright {
@@ -39,11 +48,10 @@
 @media (max-width: 767px) {
   .footer {
     padding-top: var(--space-24);
-    /* Leaves room for the floating nav. */
-    padding-bottom: var(--space-120);
   }
 
   .inner {
     flex-direction: column;
+    padding-bottom: var(--space-32);
   }
 }

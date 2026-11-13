@@ -50,6 +50,7 @@ export const about = {
 };
 
 export const contact = {
+  label: 'Get in touch',
   heading: 'Have something that needs designing? Let’s talk.',
 };
 

@@ -1,0 +1,13 @@
+.pattern {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ink {
+  fill: var(--pattern-ink, var(--text-primary));
+}
+
+.accent {
+  fill: var(--brand-orange);
+}
