@@ -2,7 +2,7 @@ import { patterns, type PatternName } from './shapes';
 import styles from './BrandPattern.module.css';
 
 type BrandPatternProps = {
-  /** band: two rows across the full width (footer). field: a dense block (CTA panel). */
+  /** band: one row across the full width (footer). field: a dense block (CTA panel). */
   pattern: PatternName;
   className?: string;
 };

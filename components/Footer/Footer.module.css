@@ -15,9 +15,10 @@
   padding-bottom: var(--space-48);
 }
 
-/* "Pattern/Band · Paper": full width at its 8:1 Figma ratio, never shorter than 96 px (crops from the centre). */
+/* "Pattern/Band · Paper" (110:241): full width on bg/subtle at its 16:1 Figma ratio, never shorter than 64 px (crops from the centre). */
 .band {
-  height: max(var(--space-96), calc(100vw / 8));
+  height: max(var(--space-64), calc(100vw / 16));
+  background: var(--bg-subtle);
 }
 
 .copyright {

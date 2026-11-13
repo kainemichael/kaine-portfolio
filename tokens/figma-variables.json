@@ -316,67 +316,67 @@
           "Mobile": 16
         },
         "type/display/size": {
-          "Desktop": 56,
-          "Mobile": 32
-        },
-        "type/display/line-height": {
-          "Desktop": 62,
-          "Mobile": 37
-        },
-        "type/h2/size": {
-          "Desktop": 30,
-          "Mobile": 24
-        },
-        "type/h2/line-height": {
-          "Desktop": 38,
+          "Desktop": 48,
           "Mobile": 30
         },
+        "type/display/line-height": {
+          "Desktop": 54,
+          "Mobile": 36
+        },
+        "type/h2/size": {
+          "Desktop": 26,
+          "Mobile": 22
+        },
+        "type/h2/line-height": {
+          "Desktop": 34,
+          "Mobile": 28
+        },
         "type/h3/size": {
-          "Desktop": 20,
-          "Mobile": 17
+          "Desktop": 18,
+          "Mobile": 16
         },
         "type/h3/line-height": {
-          "Desktop": 28,
-          "Mobile": 24
+          "Desktop": 26,
+          "Mobile": 22
         },
         "type/body-l/size": {
-          "Desktop": 22,
-          "Mobile": 17
-        },
-        "type/body-l/line-height": {
-          "Desktop": 34,
-          "Mobile": 27
-        },
-        "type/body/size": {
           "Desktop": 19,
           "Mobile": 16
         },
+        "type/body-l/line-height": {
+          "Desktop": 30,
+          "Mobile": 25
+        },
+        "type/body/size": {
+          "Desktop": 17,
+          "Mobile": 15
+        },
         "type/body/line-height": {
-          "Desktop": 31,
-          "Mobile": 26
+          "Desktop": 28,
+          "Mobile": 24
         },
         "type/label/size": {
-          "Desktop": 16,
+          "Desktop": 15,
           "Mobile": 14
         },
         "type/label/line-height": {
-          "Desktop": 24,
+          "Desktop": 22,
           "Mobile": 20
         },
         "type/small/size": {
-          "Desktop": 15,
+          "Desktop": 14,
           "Mobile": 13
         },
         "type/small/line-height": {
-          "Desktop": 22,
+          "Desktop": 20,
           "Mobile": 19
         },
         "type/mono/size": {
-          "Desktop": 13,
+          "Desktop": 12,
           "Mobile": 12
         },
         "type/mono/line-height": {
-          "Desktop": 18,
+          "Desktop": 16,
           "Mobile": 16
         }
       }
