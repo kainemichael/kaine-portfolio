@@ -87,7 +87,7 @@ The one raw value in the CSS is the `767px` breakpoint, because CSS doesn't allo
 
 **To change the tokens:** update `tokens/figma-variables.json` (re-export it from Figma, or edit it by hand), then run `npm run tokens`.
 
-**Theme:** the site follows the visitor's system setting.
+**Theme:** the site opens in light. The toggle at the end of the floating nav switches to dark, and the choice is saved in `localStorage` so it sticks between visits. The script in `lib/theme.ts` applies it before first paint.
 
 ## Content
 
@@ -141,6 +141,10 @@ Mobile shows the same visuals as desktop.
 - Alt text is required by the content types and checked before each build
 - Animations are switched off under `prefers-reduced-motion`
 - Theme colours come from Figma; check contrast there when changing them
+
+## In code, not yet in Figma
+
+- **Theme toggle** (in the floating nav): built first while Figma was unavailable. Add it to the Floating nav component.
 
 ## In Figma, not yet in code
 

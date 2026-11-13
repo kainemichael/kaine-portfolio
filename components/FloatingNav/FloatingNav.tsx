@@ -3,11 +3,12 @@
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { NavItem } from '../NavItem';
+import { ThemeToggle } from '../ThemeToggle';
 import styles from './FloatingNav.module.css';
 
 const ABOUT_ID = 'about';
 
-/** Home · Work · About. About lights up while the About section is on screen. */
+/** Home · Work · About, then the theme toggle. About lights up while the About section is on screen. */
 export function FloatingNav() {
   const pathname = usePathname();
   const aboutInView = useSectionInView(ABOUT_ID, pathname === '/');
@@ -31,6 +32,8 @@ export function FloatingNav() {
         active={active === 'about'}
         collapseLabel
       />
+      <span className={styles.divider} aria-hidden="true" />
+      <ThemeToggle />
     </nav>
   );
 }
