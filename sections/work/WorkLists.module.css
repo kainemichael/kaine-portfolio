@@ -1,0 +1,23 @@
+.rows {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--space-120);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--layout-grid-gap);
+  padding-bottom: var(--layout-section-gap);
+}
+
+@media (max-width: 767px) {
+  .rows {
+    gap: var(--space-48);
+    padding-bottom: var(--space-80);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

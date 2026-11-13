@@ -1,0 +1,6 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--layout-block-gap);
+  padding-bottom: var(--layout-section-gap);
+}

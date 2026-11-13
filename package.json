@@ -1,0 +1,41 @@
+{
+  "name": "kaine-portfolio",
+  "version": "0.1.0",
+  "description": "Michael Kaine's product design portfolio, built from the Kaine · Portfolio Figma file.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "npm run check && next build",
+    "start": "serve out",
+    "tokens": "tsx scripts/build-tokens.ts",
+    "images": "tsx scripts/optimise-images.ts",
+    "check": "npm run check:copy && npm run typecheck && npm run lint && npm run format:check",
+    "check:copy": "tsx scripts/check-copy.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "geist": "^1.9.2",
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.6",
+    "prettier": "^3.10.1",
+    "serve": "^14.2.7",
+    "sharp": "^0.35.5",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3"
+  },
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.9"
+  }
+}

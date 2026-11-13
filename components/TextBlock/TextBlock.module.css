@@ -1,0 +1,48 @@
+.block {
+  display: grid;
+  grid-template-columns: 480fr 720fr;
+  gap: var(--space-80);
+}
+
+.label {
+  font: var(--type-label);
+  color: var(--brand-orange-text);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+
+.heading {
+  font: var(--type-h2);
+  letter-spacing: var(--type-h2-tracking);
+  color: var(--text-primary);
+}
+
+/* Paragraphs are one blank line apart, as in Figma. */
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--type-body-line-height);
+  font: var(--type-body);
+  color: var(--text-secondary);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+@media (max-width: 767px) {
+  .block {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  .content {
+    gap: var(--space-12);
+  }
+}

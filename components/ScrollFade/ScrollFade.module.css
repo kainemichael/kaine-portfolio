@@ -1,0 +1,29 @@
+.fade {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.top {
+  top: 0;
+  height: var(--space-120);
+  background: linear-gradient(to bottom, var(--bg-page), transparent);
+}
+
+.bottom {
+  bottom: 0;
+  height: var(--space-144);
+  background: linear-gradient(to top, var(--bg-page), transparent);
+}
+
+@media (max-width: 767px) {
+  .top {
+    height: var(--space-96);
+  }
+
+  .bottom {
+    height: var(--space-120);
+  }
+}

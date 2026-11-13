@@ -1,0 +1,43 @@
+.button {
+  position: fixed;
+  right: var(--layout-page-margin);
+  bottom: var(--space-40);
+  z-index: 20;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-12) var(--space-16) var(--space-12) var(--space-20);
+  border-radius: var(--radius-full);
+  background: var(--action-primary);
+  color: var(--action-on-primary);
+  font: var(--type-label);
+  box-shadow: var(--highlight-button), var(--elevation-floating);
+  transition: opacity 150ms ease;
+}
+
+.button:hover {
+  opacity: 0.86;
+}
+
+.mobileIcon {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .button {
+    bottom: var(--space-24);
+    width: var(--space-48);
+    height: var(--space-48);
+    padding: 0;
+    justify-content: center;
+  }
+
+  .label,
+  .desktopIcon {
+    display: none;
+  }
+
+  .mobileIcon {
+    display: inline-flex;
+  }
+}

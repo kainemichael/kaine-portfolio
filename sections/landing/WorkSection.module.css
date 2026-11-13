@@ -1,0 +1,38 @@
+/* Shared by the three "My work" sections on the landing page. */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+.section + .section {
+  margin-top: var(--space-120);
+}
+
+.grid {
+  display: grid;
+  gap: var(--layout-grid-gap);
+}
+
+.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 767px) {
+  .section {
+    gap: var(--space-24);
+  }
+
+  .section + .section {
+    margin-top: var(--space-96);
+  }
+
+  .two,
+  .three {
+    grid-template-columns: 1fr;
+  }
+}

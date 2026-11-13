@@ -1,0 +1,18 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-20);
+  padding-top: calc(var(--space-80) + var(--space-120));
+  padding-bottom: var(--layout-section-gap);
+}
+
+.title {
+  font: var(--type-display);
+  letter-spacing: var(--type-display-tracking);
+}
+
+.body {
+  font: var(--type-body-l);
+  color: var(--text-secondary);
+}

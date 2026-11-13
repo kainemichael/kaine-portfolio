@@ -1,0 +1,38 @@
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-12) var(--space-16) var(--space-12) var(--space-12);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  font: var(--type-label);
+  white-space: nowrap;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
+
+.item:hover {
+  color: var(--text-primary);
+}
+
+.active {
+  background: var(--nav-active);
+  color: var(--text-primary);
+  box-shadow: var(--elevation-card);
+}
+
+@media (max-width: 767px) {
+  .collapsed {
+    padding-right: var(--space-12);
+  }
+
+  .collapsed .label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}
