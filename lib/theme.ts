@@ -1,22 +1,12 @@
 /**
- * Theme handling.
- *
- * The site follows the visitor's system setting. A page can force a theme
- * (Orbitfi is designed dark) by rendering <meta name="theme-override">,
- * which `generateMetadata` does for projects with `theme` set.
+ * Theme handling. The site follows the visitor's system setting.
+ * Runs before first paint (inlined in <body>) so there is no flash of the wrong theme.
  */
-export const THEME_META_NAME = 'theme-override';
-
-export type Theme = 'light' | 'dark';
-
-/** Runs before first paint (inlined in <head>) so there is no flash of the wrong theme. */
 export const themeScript = `(() => {
+  const query = matchMedia('(prefers-color-scheme: dark)');
   const apply = () => {
-    const override = document.querySelector('meta[name="${THEME_META_NAME}"]')?.content;
-    const system = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    document.documentElement.dataset.theme = override || system;
+    document.documentElement.dataset.theme = query.matches ? 'dark' : 'light';
   };
   apply();
-  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', apply);
-  window.__applyTheme = apply;
+  query.addEventListener('change', apply);
 })();`;

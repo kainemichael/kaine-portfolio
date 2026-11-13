@@ -9,7 +9,6 @@ import { ScrollFade } from '@/components/ScrollFade';
 import { TopBar } from '@/components/TopBar';
 import { site } from '@/content/site';
 import { themeScript } from '@/lib/theme';
-import { ThemeSync } from '@/lib/ThemeSync';
 import '@/styles/tokens.css';
 import '@/styles/globals.css';
 
@@ -28,12 +27,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       suppressHydrationWarning
     >
       <body>
-        {/* First in <body>, so <head> (and any theme override meta) is already parsed. */}
+        {/* Sets data-theme before first paint. */}
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <a className="skip-link" href="#main">
           Skip to content
         </a>
-        <ThemeSync />
         <ScrollFade position="top" />
         <TopBar name={site.name} role={site.role} />
         <main id="main">{children}</main>

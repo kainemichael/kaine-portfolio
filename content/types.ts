@@ -63,8 +63,6 @@ export type CaseStudy = {
   cover: ImageRef;
   /** Featured case studies appear on the landing page. */
   featured?: boolean;
-  /** Force a theme for this page. Leave unset to follow the visitor's system setting. */
-  theme?: 'dark';
   blocks: Block[];
 };
 

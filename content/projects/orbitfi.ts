@@ -18,7 +18,6 @@ export const orbitfi: CaseStudy = {
     { key: 'Platform', value: 'iOS app and website' },
     { key: 'Year', value: '2025' },
   ],
-  theme: 'dark',
   cover: {
     src: 'covers/orbitfi',
     alt: 'A hand holding a phone running the Orbitfi wallet, on a purple gradient.',

@@ -87,7 +87,7 @@ The one raw value in the CSS is the `767px` breakpoint, because CSS doesn't allo
 
 **To change the tokens:** update `tokens/figma-variables.json` (re-export it from Figma, or edit it by hand), then run `npm run tokens`.
 
-**Theme:** the site follows the visitor's system setting. A case study can force a theme with `theme: 'dark'` in its content file (Orbitfi does).
+**Theme:** the site follows the visitor's system setting.
 
 ## Content
 
