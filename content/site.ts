@@ -10,9 +10,9 @@ export const site = {
   location: 'Based in Malta',
   /** Leave `href` empty to hide a link until it is ready. */
   socials: [
-    { label: 'LinkedIn', href: '' },
-    { label: 'X', href: '' },
-    { label: 'Dribbble', href: '' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/michael-kaine/' },
+    { label: 'X', href: 'https://x.com/kainemichaell' },
+    { label: 'Dribbble', href: 'https://dribbble.com/michaelkaine' },
   ],
 };
 

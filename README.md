@@ -124,9 +124,9 @@ Two rules need a human: no invented metrics, and concepts are labelled self-init
 
 Images are exported from Figma at 2x and optimised at build time.
 
-1. In Figma, open the **Export · Website images** page. Each frame is named with its site path (`covers/rivo`, `rivo/01-hero`…) and set to PNG at 2x.
-2. Export them all (Shift + Cmd + E) into `assets/images/`. Figma creates the subfolders from the slashes in the names.
-3. Run `npm run images`. It writes AVIF, WebP and JPEG files at 640 px, half size and full size into `public/images/`, and updates `content/image-manifest.ts`.
+1. In Figma, open the **Export · Website images** page. Each frame is named after its site path (`covers-rivo`, `rivo-01-hero`…) and set to PNG at 2x.
+2. Export them, one by one or all at once, into `assets/images/` (or any folder).
+3. Run `npm run images` (or `npm run images -- path/to/folder`). The first dash in each file name becomes a folder, so `rivo-01-hero.png` is served as `rivo/01-hero`. It writes AVIF, WebP and JPEG files at 640 px, half size and full size into `public/images/`, and updates `content/image-manifest.ts`.
 
 `assets/images/` holds the large originals and isn't committed. Any image that isn't in the manifest yet renders as a neutral box of the right size, so the site always builds.
 

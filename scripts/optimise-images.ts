@@ -1,7 +1,8 @@
 /**
  * Optimises the 2x PNG exports from Figma for the web.
  *
- * Input:  assets/images/**\/*.png   (exported from the "Export · Website images" page, not committed)
+ * Input:  assets/images/*.png       (exported from the "Export · Website images" page, not committed)
+ *         Pass another folder as an argument: `npm run images -- ~/Desktop/kaine-portfolio-images`
  * Output: public/images/**          AVIF, WebP and JPEG at several widths
  *         content/image-manifest.ts list of available images and their sizes
  *
@@ -13,7 +14,7 @@ import { dirname, join, relative, resolve } from 'node:path';
 import sharp from 'sharp';
 
 const root = resolve(import.meta.dirname, '..');
-const inputDir = join(root, 'assets/images');
+const inputDir = resolve(process.argv[2] ?? join(root, 'assets/images'));
 const outputDir = join(root, 'public/images');
 
 /** Smallest width generated, so phones never download the full 2x file. */
@@ -41,10 +42,11 @@ try {
 const manifest: Record<string, { width: number; height: number; widths: number[] }> = {};
 
 for (const file of files) {
-  // "rivo/01-hero@2x.png" and "rivo/01-hero.png" both become "rivo/01-hero"
-  const key = relative(inputDir, file)
+  // Flat Figma names map to site paths: "rivo-01-hero@2x.png" and "rivo/01-hero.png" both become "rivo/01-hero".
+  const name = relative(inputDir, file)
     .replace(/\\/g, '/')
     .replace(/(@2x)?\.png$/i, '');
+  const key = name.includes('/') ? name : name.replace('-', '/');
   const image = sharp(file);
   const { width = 0, height = 0 } = await image.metadata();
   const widths = widthsFor(width);
