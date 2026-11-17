@@ -9,6 +9,7 @@ import { ScrollFade } from '@/components/ScrollFade';
 import { TopBar } from '@/components/TopBar';
 import { site } from '@/content/site';
 import { themeScript } from '@/lib/theme';
+import { workViewScript } from '@/lib/work-view';
 import '@/styles/tokens.css';
 import '@/styles/globals.css';
 
@@ -27,8 +28,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       suppressHydrationWarning
     >
       <body>
-        {/* Sets data-theme before first paint. */}
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        {/* Set data-theme and data-work-view before first paint. */}
+        <script dangerouslySetInnerHTML={{ __html: themeScript + workViewScript }} />
         <a className="skip-link" href="#main">
           Skip to content
         </a>

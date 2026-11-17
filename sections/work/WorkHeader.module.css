@@ -20,10 +20,18 @@
   color: var(--text-secondary);
 }
 
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-16);
+  align-self: stretch;
+  padding-top: var(--space-16);
+}
+
 .tabs {
   display: flex;
   gap: var(--space-8);
-  padding-top: var(--space-16);
 }
 
 @media (max-width: 767px) {
@@ -33,7 +41,7 @@
     padding-bottom: var(--space-32);
   }
 
-  .tabs {
+  .controls {
     padding-top: var(--space-8);
   }
 }

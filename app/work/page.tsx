@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { WorkCard } from '@/components/WorkCard';
 import { ProjectRow } from '@/components/ProjectRow';
 import { caseStudies, caseStudyNumber } from '@/content/projects';
 import { WorkHeader } from '@/sections/work/WorkHeader';
@@ -27,6 +28,21 @@ export default function WorkPage() {
               image={project.cover}
               href={`/work/${project.slug}/`}
               priority={index === 0}
+            />
+          </li>
+        ))}
+      </ul>
+      <ul className={`container ${styles.cards}`} aria-label="Case studies">
+        {caseStudies.map((project) => (
+          <li key={project.slug}>
+            <WorkCard
+              type="case-study"
+              number={caseStudyNumber(project)}
+              title={project.title}
+              kind={project.industry}
+              image={project.cover}
+              href={`/work/${project.slug}/`}
+              sizes="(max-width: 767px) 100vw, 630px"
             />
           </li>
         ))}
