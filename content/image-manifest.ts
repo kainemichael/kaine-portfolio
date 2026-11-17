@@ -253,6 +253,15 @@ export const imageManifest: Record<string, { width: number; height: number; widt
       2560
     ]
   },
+  "rivo/02-four-results": {
+    "width": 2560,
+    "height": 1600,
+    "widths": [
+      640,
+      1280,
+      2560
+    ]
+  },
   "rivo/03-edge-case": {
     "width": 2560,
     "height": 1600,
