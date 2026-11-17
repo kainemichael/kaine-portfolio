@@ -31,7 +31,15 @@ export default async function CaseStudyPage({ params }: Params) {
   const next = nextCaseStudy(project);
 
   return (
-    <article>
+    <article
+      // Every accent on the page (project name, section labels, list numbers) uses the project's colour.
+      // Falls back to the primary text colour when a project has no accent variable.
+      style={
+        {
+          '--project-accent': `var(--accent-${project.slug}, var(--text-primary))`,
+        } as React.CSSProperties
+      }
+    >
       <CaseStudyHero project={project} />
       <CaseStudyBody blocks={project.blocks} />
       <NextProject

@@ -144,10 +144,6 @@ Mobile shows the same visuals as desktop.
 - Animations are switched off under `prefers-reduced-motion`
 - Theme colours come from Figma; check contrast there when changing them
 
-## In code, not yet in Figma
-
-- **Theme toggle** (in the floating nav): built first while Figma was unavailable. Add it to the Floating nav component.
-
 ## In Figma, not yet in code
 
 These components exist in Figma but nothing on the site uses them yet, so they aren't built. Build them when a page needs them.

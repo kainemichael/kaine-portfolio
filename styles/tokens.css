@@ -37,6 +37,8 @@
   --project-synqop-light: #60a5fa;
   --project-orbit: #d0f864;
   --project-orbit-light: #12180f;
+  --project-kestrel: #c4612f;
+  --project-kestrel-light: #e07a45;
 
   /* Theme · Light */
   --bg-page: var(--neutral-0);
@@ -61,6 +63,7 @@
   --accent-vanta: var(--project-vanta);
   --accent-synqop: var(--project-synqop);
   --accent-orbitfi: var(--project-orbit-light);
+  --accent-kestrel: var(--project-kestrel);
 
   /* Layout · Desktop */
   --space-0: 0;
@@ -159,6 +162,7 @@
   --accent-vanta: var(--project-vanta-light);
   --accent-synqop: var(--project-synqop-light);
   --accent-orbitfi: var(--project-orbit);
+  --accent-kestrel: var(--project-kestrel-light);
 }
 
 @media (max-width: 767px) {

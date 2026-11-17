@@ -96,6 +96,12 @@
         },
         "project/orbit-light": {
           "Value": "#12180f"
+        },
+        "project/kestrel": {
+          "Value": "#c4612f"
+        },
+        "project/kestrel-light": {
+          "Value": "#e07a45"
         }
       }
     },
@@ -189,6 +195,10 @@
         "accent/orbitfi": {
           "Light": "{project/orbit-light}",
           "Dark": "{project/orbit}"
+        },
+        "accent/kestrel": {
+          "Light": "{project/kestrel}",
+          "Dark": "{project/kestrel-light}"
         }
       }
     },

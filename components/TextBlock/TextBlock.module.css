@@ -6,7 +6,8 @@
 
 .label {
   font: var(--type-label);
-  color: var(--brand-orange-text);
+  /* The case study's accent (set on the page), brand orange elsewhere. */
+  color: var(--project-accent, var(--brand-orange-text));
 }
 
 .content {
