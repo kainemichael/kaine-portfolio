@@ -48,6 +48,7 @@ components/              One folder per Figma component, same names as in Figma
   TextBlock/  ListItem/  Visual/  MetaItem/  NextProject/  Footer/  ScrollFade/
   BrandPattern/          Pattern/Band · Paper and Pattern/Field · Ink, drawn inline so they follow the theme
   ThemeToggle/
+  ViewToggle/
 sections/                Page sections built from components
   landing/               Hero, Case studies, Explorations, Side projects, About, Contact
   work/                  Work header with tabs, exploration card
@@ -90,6 +91,8 @@ The one raw value in the CSS is the `767px` breakpoint, because CSS doesn't allo
 **To change the tokens:** update `tokens/figma-variables.json` (re-export it from Figma, or edit it by hand), then run `npm run tokens`.
 
 **Theme:** the site opens in light. The toggle at the end of the floating nav switches to dark, and the choice is saved in `localStorage` so it sticks between visits. The script in `lib/theme.ts` applies it before first paint.
+
+**Case studies view:** the Case studies tab has a list/grid toggle. List is the default; a choice of grid is saved in `localStorage`. Both layouts are in the page and `lib/work-view.ts` sets `data-work-view` on `<html>` before first paint, so CSS shows the right one without a jump.
 
 ## Content
 
